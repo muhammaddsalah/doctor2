@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الحجز - جميع التخصصات</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { background: #f8f9fa; }
+        .booking-section { margin-bottom: 48px; }
+        .booking-section h2 { margin-bottom: 24px; color: #007bff; }
+        .booking-card { 
+            background: #fff; 
+            border-radius: 20px; 
+            box-shadow: 0 4px 16px #0002; 
+            margin-bottom: 40px; 
+            padding: 32px; 
+            min-height: auto; 
+            display: flex; 
+            align-items: center; 
+            gap: 32px; 
+        }
+        .booking-img { display: none; }
+        .booking-info { 
+            flex: 1; 
+            text-align: right;
+        }
+        .booking-title { 
+            font-size: 1.6rem; 
+            font-weight: bold; 
+            margin-bottom: 10px; 
+            color: #007bff;
+        }
+        .booking-specialty { 
+            color: #666; 
+            margin-bottom: 12px; 
+            font-size: 1.15rem; 
+        }
+        .booking-price { 
+            font-size: 1.25rem; 
+            color: #28a745; 
+            margin-bottom: 14px; 
+        }
+        .btn-booking {
+            background: #28a745 !important;
+            color: #fff !important;
+            border: none !important;
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 12px 32px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+        .btn-booking:hover {
+            background: #218838 !important;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(40, 167, 69, 0.2);
+        }
+        .booking-divider {
+            width: 100%;
+            height: 36px;
+            background: rgba(200,200,200,0.15);
+            filter: blur(8px);
+            border-radius: 16px;
+            margin: 32px 0;
+        }
+        @media (max-width: 991px) {
+            .booking-card { 
+                flex-direction: column; 
+                text-align: center; 
+                padding: 32px 12px; 
+                gap: 18px; 
+            }
+            .booking-img { max-width: 100%; height: 180px; margin: 0 auto; }
+        }
+        .section-divider {
+            width: 100%;
+            height: 32px;
+            background: linear-gradient(90deg, #e3f0ff 0%, #b3d8ff 50%, #e3f0ff 100%);
+            border-radius: 16px;
+            margin: 0 auto 36px auto;
+            box-shadow: 0 2px 12px #007bff22;
+            opacity: 0.85;
+        }
+        @media (max-width: 991px) {
+            .section-divider { height: 18px; margin-bottom: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <!-- قسم القلب والأوعية الدموية -->
+        <div id="cardio-booking" class="booking-section">
+            <h2 class="text-center">قسم القلب والأوعية الدموية</h2>
+            <div class="booking-card d-flex align-items-center gap-4 flex-wrap">
+                <div class="booking-info">
+                    <div class="booking-title">د. محمد السيد عيد</div>
+                    <div class="booking-specialty">التخصص: قلب وباطنة</div>
+                    <div class="booking-price">السعر: 350 جنيه مصري</div>
+                    <button class="btn btn-booking" onclick="openBookingModal('د. محمد السيد عيد', 'قلب وباطنة', '350 جنيه مصري', 'قسم القلب والأوعية الدموية')">اضغط للحجز</button>
+                </div>
+            </div>
+            <div class="booking-card d-flex align-items-center gap-4 flex-wrap">
+                <div class="booking-info">
+                    <div class="booking-title">عيادة القلب والقسطرة</div>
+                    <div class="booking-specialty">التخصص: قسطرة القلب التشخيصية والعلاجية</div>
+                    <div class="booking-price">السعر: 300 جنيه مصري</div>
+                    <button class="btn btn-booking" onclick="openBookingModal('عيادة القلب والقسطرة', 'قسطرة القلب التشخيصية والعلاجية', '300 جنيه مصري', 'قسم القلب والأوعية الدموية')">اضغط للحجز</button>
+                </div>
+            </div>
+            <div class="services-list mt-4">
+                <h4 class="text-primary mb-3">خدمات القسم:</h4>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>تشخيص وعلاج أمراض الشريان التاجي</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>تشخيص مبكر لأمراض القلب التاجية وتقديم العلاجات الدوائية المناسبة</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>تشخيص وعلاج ارتفاع ضغط الدم</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>تقييم شامل لحالات ارتفاع ضغط الدم وتقديم خطط علاجية متكاملة</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>مراقبة نظم القلب واضطراباتها</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>تشخيص وعلاج اضطرابات نظم القلب باستخدام أجهزة مراقبة القلب المتقدمة</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>تخطيط صدى القلب</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>إجراء فحوصات صدى القلب لتقييم وظائف القلب وصماماته</li>
+                </ul>
+            </div>
+        </div>
+        <div class="section-divider"></div>
+        <!-- قسم الباطنة والجهاز الهضمي -->
+        <div id="gastro-booking" class="booking-section">
+            <h2 class="text-center">قسم الباطنة والجهاز الهضمي</h2>
+            <div class="booking-card d-flex align-items-center gap-4 flex-wrap">
+                <div class="booking-info">
+                    <div class="booking-title">د. مختار عبد العاطي شحاته</div>
+                    <div class="booking-specialty">التخصص: أمراض الباطنه والكبد والجهاز الهضمي</div>
+                    <div class="booking-price">السعر: 350 جنيه مصري</div>
+                    <button class="btn btn-booking" onclick="openBookingModal('د. مختار عبد العاطي شحاته', 'أمراض الباطنه والكبد والجهاز الهضمي', '350 جنيه مصري', 'قسم الباطنة والجهاز الهضمي')">اضغط للحجز</button>
+                </div>
+            </div>
+            <div class="booking-card d-flex align-items-center gap-4 flex-wrap">
+                <div class="booking-info">
+                    <div class="booking-title">د. محمد السيد عيد</div>
+                    <div class="booking-specialty">التخصص: قلب وباطنة</div>
+                    <div class="booking-price">السعر: 350 جنيه مصري</div>
+                    <button class="btn btn-booking" onclick="openBookingModal('د. محمد السيد عيد', 'قلب وباطنة', '350 جنيه مصري', 'قسم الباطنة والجهاز الهضمي')">اضغط للحجز</button>
+                </div>
+            </div>
+            <div class="services-list mt-4">
+                <h4 class="text-primary mb-3">خدمات القسم:</h4>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>تشخيص وعلاج أمراض المعدة</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>تشخيص وعلاج قرحة المعدة، الارتجاع المريئي، والتهابات المعدة المختلفة</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>تشخيص وعلاج أمراض القولون</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>علاج القولون العصبي، التهابات القولون، والقولون التقرحي</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>تشخيص وعلاج أمراض الكبد</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>علاج التهاب الكبد الفيروسي، تليف الكبد، والدهون في الكبد</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>مناظير الجهاز الهضمي</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>إجراء مناظير المعدة والقولون التشخيصية والعلاجية بأحدث التقنيات</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>الموجات فوق الصوتية للبطن</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>فحص البطن بالموجات فوق الصوتية لتشخيص أمراض الكبد والمرارة والبنكرياس</li>
+                </ul>
+            </div>
+        </div>
+        <div class="section-divider"></div>
+        <!-- قسم الزيارات المنزلية / الطوارئ المنزلية -->
+        <div id="homecare-booking" class="booking-section">
+            <h2 class="text-center">قسم الزيارات المنزلية / الطوارئ المنزلية</h2>
+            <div class="booking-card d-flex align-items-center gap-4 flex-wrap">
+                <div class="booking-info">
+                    <div class="booking-title">استشاري طوارئ للزيارة المنزلية</div>
+                    <div class="booking-specialty">التخصص: زيارة منزلية للحالات الطارئة</div>
+                    <div class="booking-price">السعر: 600 جنيه مصري</div>
+                    <button class="btn btn-booking" onclick="openBookingModal('استشاري طوارئ للزيارة المنزلية', 'زيارة منزلية للحالات الطارئة', '600 جنيه مصري', 'قسم الزيارات المنزلية / الطوارئ المنزلية')">اضغط للحجز</button>
+                </div>
+            </div>
+            <div class="booking-card d-flex align-items-center gap-4 flex-wrap">
+                <div class="booking-info">
+                    <div class="booking-title">طوارئ منزلي</div>
+                    <div class="booking-specialty">التخصص: طوارئ 24 ساعة</div>
+                    <div class="booking-price">السعر: بالحجز</div>
+                    <button class="btn btn-booking" onclick="openBookingModal('طوارئ منزلي', 'طوارئ 24 ساعة', 'بالحجز', 'قسم الزيارات المنزلية / الطوارئ المنزلية')">اضغط للحجز</button>
+                </div>
+            </div>
+        </div>
+        <!-- قسم الأشعة والتصوير -->
+        <div id="imaging-booking" class="booking-section">
+            <h2 class="text-center">قسم الأشعة والتصوير</h2>
+            <div class="booking-card d-flex align-items-center gap-4 flex-wrap">
+                <div class="booking-info">
+                    <div class="booking-title">الشمول الطبي في الأشعة</div>
+                    <div class="booking-specialty">التخصص: الأشعة التشخيصية والتصوير الطبي</div>
+                    <div class="booking-price">السعر: بالحجز</div>
+                    <button class="btn btn-booking" onclick="openBookingModal('الشمول الطبي في الأشعة', 'الأشعة التشخيصية والتصوير الطبي', 'بالحجز', 'قسم الأشعة والتصوير')">اضغط للحجز</button>
+                </div>
+            </div>
+            <div class="services-list mt-4">
+                <h4 class="text-primary mb-3">خدمات القسم:</h4>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>الأشعة المقطعية</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>تصوير مقطعي محوسب عالي الدقة للتشخيص الدقيق</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>الرنين المغناطيسي</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>تصوير بالرنين المغناطيسي للكشف عن الأمراض والإصابات</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>الأشعة السينية الرقمية</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>تصوير رقمي عالي الجودة للعظام والصدر والبطن</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>الموجات فوق الصوتية</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>فحص بالموجات فوق الصوتية للبطن والحوض والثدي والقلب</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>تصوير الثدي</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>ماموجرام رقمي للكشف المبكر عن سرطان الثدي</li>
+                </ul>
+            </div>
+        </div>
+        <!-- قسم التحاليل الطبية -->
+        <div id="lab-booking" class="booking-section">
+            <h2 class="text-center">قسم التحاليل الطبية</h2>
+            <div class="booking-card d-flex align-items-center gap-4 flex-wrap">
+                <div class="booking-info">
+                    <div class="booking-title">معامل آدم وحواء لجميع التحاليل الطبية</div>
+                    <div class="booking-specialty">التخصص: معامل داخل بنها</div>
+                    <div class="booking-price">السعر: بالحجز</div>
+                    <button class="btn btn-booking" onclick="openBookingModal('معامل آدم وحواء لجميع التحاليل الطبية', 'معامل داخل بنها', 'بالحجز', 'قسم التحاليل الطبية')">اضغط للحجز</button>
+                </div>
+            </div>
+            <div class="booking-card d-flex align-items-center gap-4 flex-wrap">
+                <div class="booking-info">
+                    <div class="booking-title">تحاليل الأنسجة والأورام</div>
+                    <div class="booking-specialty">التخصص: تحاليل الأنسجة والأورام</div>
+                    <div class="booking-price">السعر: حسب حجم العينة</div>
+                    <button class="btn btn-booking" onclick="openBookingModal('تحاليل الأنسجة والأورام', 'تحاليل الأنسجة والأورام', 'حسب حجم العينة', 'قسم التحاليل الطبية')">اضغط للحجز</button>
+                </div>
+            </div>
+            <div class="booking-card d-flex align-items-center gap-4 flex-wrap">
+                <div class="booking-info">
+                    <div class="booking-title">تطمن على نفسك</div>
+                    <div class="booking-specialty">التخصص: باقة فحوصات شاملة</div>
+                    <div class="booking-price">السعر: 750 جنيه مصري</div>
+                    <button class="btn btn-booking" onclick="openBookingModal('تطمن على نفسك', 'باقة فحوصات شاملة', '750 جنيه مصري', 'قسم التحاليل الطبية')">اضغط للحجز</button>
+                </div>
+            </div>
+            <div class="booking-card d-flex align-items-center gap-4 flex-wrap">
+                <div class="booking-info">
+                    <div class="booking-title">تحليل فيتامين د</div>
+                    <div class="booking-specialty">التخصص: تحليل فيتامين د</div>
+                    <div class="booking-price">السعر: 350 جنيه مصري</div>
+                    <button class="btn btn-booking" onclick="openBookingModal('تحليل فيتامين د', 'تحليل فيتامين د', '350 جنيه مصري', 'قسم التحاليل الطبية')">اضغط للحجز</button>
+                </div>
+            </div>
+            <div class="services-list mt-4">
+                <h4 class="text-primary mb-3">خدمات القسم:</h4>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>اطمئن على نفسك - باقة فحوصات شاملة بسعر 750 جنيه</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>تحليل فيتامين د - بسعر 350 جنيه</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>تحاليل الدم الشاملة</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>وظائف الكبد والكلى</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>تحاليل الغدد الصماء</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>تحاليل الباثولوجي والأنسجة والأورام</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>فحص العينات النسيجية</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>تحليل الخزعات</li>
+                </ul>
+            </div>
+        </div>
+        <!-- قسم العمليات والجراحة -->
+        <div id="surgery-booking" class="booking-section">
+            <h2 class="text-center">قسم العمليات والجراحة</h2>
+            <div class="booking-card d-flex align-items-center gap-4 flex-wrap">
+                <div class="booking-info">
+                    <div class="booking-title">عمليات تكميم المعدة</div>
+                    <div class="booking-specialty">التخصص: تكميم المعدة وجراحات السمنة</div>
+                    <div class="booking-price">السعر: بالحجز</div>
+                    <button class="btn btn-booking" onclick="openBookingModal('عمليات تكميم المعدة', 'تكميم المعدة وجراحات السمنة', 'بالحجز', 'قسم العمليات والجراحة')">اضغط للحجز</button>
+                </div>
+            </div>
+            <div class="booking-card d-flex align-items-center gap-4 flex-wrap">
+                <div class="booking-info">
+                    <div class="booking-title">الجراحة العامة والأورام</div>
+                    <div class="booking-specialty">التخصص: جراحة عامة وجراحة الأورام</div>
+                    <div class="booking-price">السعر: 250 جنيه مصري</div>
+                    <button class="btn btn-booking" onclick="openBookingModal('الجراحة العامة والأورام', 'جراحة عامة وجراحة الأورام', '250 جنيه مصري', 'قسم العمليات والجراحة')">اضغط للحجز</button>
+                </div>
+            </div>
+            <div class="services-list mt-4">
+                <h4 class="text-primary mb-3">خدمات القسم:</h4>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>جراحات السمنة</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>الجراحة العامة</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>جراحة الأورام</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>جراحة المناظير</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>الجراحات التجميلية</li>
+                </ul>
+            </div>
+        </div>
+        <!-- قسم علاج الإدمان والأمراض النفسية -->
+        <div id="addiction-booking" class="booking-section">
+            <h2 class="text-center">قسم علاج الإدمان والأمراض النفسية</h2>
+            <div class="booking-card d-flex align-items-center gap-4 flex-wrap">
+                <div class="booking-info">
+                    <div class="booking-title">علاج الإدمان وإعادة التأهيل</div>
+                    <div class="booking-specialty">التخصص: علاج الإدمان والتأهيل</div>
+                    <div class="booking-price">السعر: 350 جنيه مصري</div>
+                    <button class="btn btn-booking" onclick="openBookingModal('علاج الإدمان وإعادة التأهيل', 'علاج الإدمان والتأهيل', '350 جنيه مصري', 'قسم علاج الإدمان والأمراض النفسية')">اضغط للحجز</button>
+                </div>
+            </div>
+            <div class="booking-card d-flex align-items-center gap-4 flex-wrap">
+                <div class="booking-info">
+                    <div class="booking-title">عيادات النفسية ومشاكل المراهقين والإدمان</div>
+                    <div class="booking-specialty">التخصص: الأمراض النفسية ومشاكل المراهقين وعلاج الإدمان</div>
+                    <div class="booking-price">السعر: 250 جنيه مصري</div>
+                    <button class="btn btn-booking" onclick="openBookingModal('عيادات النفسية ومشاكل المراهقين والإدمان', 'الأمراض النفسية ومشاكل المراهقين وعلاج الإدمان', '250 جنيه مصري', 'قسم علاج الإدمان والأمراض النفسية')">اضغط للحجز</button>
+                </div>
+            </div>
+            <div class="services-list mt-4">
+                <h4 class="text-primary mb-3">خدمات القسم:</h4>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>برنامج التخلص من السموم</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>العلاج النفسي الفردي والجماعي</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>برامج إعادة التأهيل الاجتماعي</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>المتابعة والدعم بعد العلاج</li>
+                </ul>
+            </div>
+        </div>
+        <!-- قسم الأسنان -->
+        <div id="dentistry-booking" class="booking-section">
+            <h2 class="text-center">قسم الأسنان</h2>
+            <div class="booking-card d-flex align-items-center gap-4 flex-wrap">
+                <div class="booking-info">
+                    <div class="booking-title">طب الأسنان والتركيب</div>
+                    <div class="booking-specialty">التخصص: طب وجراحة الأسنان</div>
+                    <div class="booking-price">السعر: بالحجز</div>
+                    <button class="btn btn-booking" onclick="openBookingModal('طب الأسنان والتركيب', 'طب وجراحة الأسنان', 'بالحجز', 'قسم الأسنان')">اضغط للحجز</button>
+                </div>
+            </div>
+            <div class="services-list mt-4">
+                <h4 class="text-primary mb-3">خدمات القسم:</h4>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>تقويم الأسنان</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>زراعة الأسنان</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>علاج العصب</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>تجميل الأسنان</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>علاج أمراض اللثة</li>
+                </ul>
+            </div>
+        </div>
+        <!-- قسم الجلدية -->
+        <div id="dermatology-booking" class="booking-section">
+            <h2 class="text-center">قسم الجلدية</h2>
+            <div class="booking-card d-flex align-items-center gap-4 flex-wrap">
+                <div class="booking-info">
+                    <div class="booking-title">عيادات الجلدية</div>
+                    <div class="booking-specialty">التخصص: الأمراض الجلدية والتجميل والليزر</div>
+                    <div class="booking-price">السعر: 200 جنيه مصري</div>
+                    <button class="btn btn-booking" onclick="openBookingModal('عيادات الجلدية', 'الأمراض الجلدية والتجميل والليزر', '200 جنيه مصري', 'قسم الجلدية والتجميل')">اضغط للحجز</button>
+                </div>
+            </div>
+            <div class="services-list mt-4">
+                <h4 class="text-primary mb-3">خدمات القسم:</h4>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>علاج الأمراض الجلدية</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>علاج مشاكل البشرة</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>علاج تساقط الشعر</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>علاجات التجميل بالليزر</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>الحقن التجميلية</li>
+                </ul>
+            </div>
+        </div>
+        <!-- قسم الأطفال -->
+        <div id="pediatrics-booking" class="booking-section">
+            <h2 class="text-center">قسم الأطفال</h2>
+            <div class="booking-card d-flex align-items-center gap-4 flex-wrap">
+                <div class="booking-info">
+                    <div class="booking-title">استشاري الأطفال</div>
+                    <div class="booking-specialty">التخصص: طب الأطفال</div>
+                    <div class="booking-price">السعر: بالحجز</div>
+                    <button class="btn btn-booking" onclick="openBookingModal('استشاري الأطفال', 'طب الأطفال', 'بالحجز', 'قسم الأطفال')">اضغط للحجز</button>
+                </div>
+            </div>
+        </div>
+        <!-- قسم الرعاية الطبية (العناية المركزة والمتوسطة والغرفة الفندقية) -->
+        <div id="icu-booking" class="booking-section">
+            <h2 class="text-center">قسم الرعاية الطبية</h2>
+            <div class="booking-card d-flex align-items-center gap-4 flex-wrap">
+                <div class="booking-info">
+                    <div class="booking-title">العناية المركزة</div>
+                    <div class="booking-specialty">التخصص: العناية المركزة للحالات الحرجة</div>
+                    <div class="booking-price">السعر: بالحجز</div>
+                    <button class="btn btn-booking" onclick="openBookingModal('العناية المركزة', 'العناية المركزة للحالات الحرجة', 'بالحجز', 'قسم الرعاية الطبية')">اضغط للحجز</button>
+                </div>
+            </div>
+            <div class="booking-card d-flex align-items-center gap-4 flex-wrap">
+                <div class="booking-info">
+                    <div class="booking-title">الرعاية المتوسطة</div>
+                    <div class="booking-specialty">التخصص: الرعاية للحالات المستقرة</div>
+                    <div class="booking-price">السعر: بالحجز</div>
+                    <button class="btn btn-booking" onclick="openBookingModal('الرعاية المتوسطة', 'الرعاية للحالات المستقرة', 'بالحجز', 'قسم الرعاية الطبية')">اضغط للحجز</button>
+                </div>
+            </div>
+            <div class="booking-card d-flex align-items-center gap-4 flex-wrap">
+                <div class="booking-info">
+                    <div class="booking-title">غرفة فندقية للمرضى</div>
+                    <div class="booking-specialty">التخصص: غرف فندقية للإقامة ومتابعة الحالات الحرجة من حرارة وباطنة - متابعة طبية على مدار 24 ساعة مع خدمات فندقية متميزة</div>
+                    <div class="booking-price">السعر: بالحجز</div>
+                    <button class="btn btn-booking" onclick="openBookingModal('غرفة فندقية للمرضى', 'غرف فندقية للإقامة ومتابعة الحالات الحرجة من حرارة وباطنة - متابعة طبية على مدار 24 ساعة مع خدمات فندقية متميزة', 'بالحجز', 'قسم الرعاية الطبية')">اضغط للحجز</button>
+                </div>
+            </div>
+        </div>
+        <div id="stepdown-booking"></div>
+        <div id="hotel-booking"></div>
+        <!-- قسم طب العيون -->
+        <div id="eye-booking" class="booking-section">
+            <h2 class="text-center">قسم طب العيون</h2>
+            <div class="booking-card d-flex align-items-center gap-4 flex-wrap">
+                <div class="booking-info">
+                    <div class="booking-title">طب العيون</div>
+                    <div class="booking-specialty">التخصص: جراحات الشبكية والليزك</div>
+                    <div class="booking-price">السعر: 250 جنيه مصري</div>
+                    <button class="btn btn-booking" onclick="openBookingModal('طب العيون', 'جراحات الشبكية والليزك', '250 جنيه مصري', 'قسم طب العيون')">اضغط للحجز</button>
+                </div>
+            </div>
+        </div>
+        <div class="section-divider"></div>
+        <!-- قسم الأنف والأذن والحنجرة -->
+        <div id="ent-booking" class="booking-section">
+            <h2 class="text-center">قسم الأنف والأذن والحنجرة</h2>
+            <div class="booking-card d-flex align-items-center gap-4 flex-wrap">
+                <div class="booking-info">
+                    <div class="booking-title">استشاري الأنف والأذن</div>
+                    <div class="booking-specialty">التخصص: الأنف والأذن والحنجرة</div>
+                    <div class="booking-price">السعر: بالحجز</div>
+                    <button class="btn btn-booking" onclick="openBookingModal('استشاري الأنف والأذن', 'الأنف والأذن والحنجرة', 'بالحجز', 'قسم الأنف والأذن والحنجرة')">اضغط للحجز</button>
+                </div>
+            </div>
+        </div>
+        <div class="section-divider"></div>
+    </div>
+    <!-- نافذة الحجز المنبثقة -->
+    <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="bookingModalLabel">حجز موعد</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="إغلاق"></button>
+          </div>
+          <div class="modal-body">
+            <form id="modalBookingForm">
+              <div class="mb-3">
+                <label for="modalName" class="form-label">الاسم</label>
+                <input type="text" class="form-control" id="modalName" required>
+              </div>
+              <div class="mb-3">
+                <label for="modalAddress" class="form-label">العنوان</label>
+                <input type="text" class="form-control" id="modalAddress" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">الخدمة</label>
+                <input type="text" class="form-control" id="modalService" readonly>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">السعر</label>
+                <input type="text" class="form-control" id="modalPrice" readonly>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إلغاء</button>
+            <button type="button" class="btn btn-success" onclick="sendBookingToWhatsApp()">تأكيد</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    // عند الضغط على زر احجز الآن، بلور باقي العناصر
+    function openBookingModal(name, specialty, price, section) {
+        // تعبئة بيانات المودال
+        document.getElementById('modalService').value = name;
+        document.getElementById('modalPrice').value = price;
+        document.getElementById('modalName').value = '';
+        document.getElementById('modalAddress').value = '';
+        
+        // عرض المودال
+        var modal = new bootstrap.Modal(document.getElementById('bookingModal'));
+        modal.show();
+    }
+    function sendBookingToWhatsApp() {
+        var name = document.getElementById('modalName').value;
+        var address = document.getElementById('modalAddress').value;
+        var item = document.getElementById('modalService').value;
+        var price = document.getElementById('modalPrice').value;
+
+        if (!name || !address) {
+            alert('يرجى ملء جميع الحقول');
+            return;
+        }
+
+        var message = `حجز موعد\nالاسم: ${name}\nالعنوان: ${address}\nالخدمة: ${item}\nالسعر: ${price}`;
+        var url = `https://wa.me/201000570375?text=${encodeURIComponent(message)}`;
+        window.open(url, '_blank');
+        
+        var modal = bootstrap.Modal.getInstance(document.getElementById('bookingModal'));
+        modal.hide();
+    }
+    // تحديث جميع أزرار احجز الآن لتمرير اسم القسم
+    window.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.booking-section').forEach(section => {
+            let sectionName = section.querySelector('h2')?.innerText || '';
+            section.querySelectorAll('.booking-card').forEach(card => {
+                let btn = card.querySelector('button.btn');
+                if(btn) {
+                    let title = card.querySelector('.booking-title')?.innerText || '';
+                    let specialty = card.querySelector('.booking-specialty')?.innerText.replace('التخصص: ', '') || '';
+                    let price = card.querySelector('.booking-price')?.innerText.replace('السعر: ', '') || '';
+                    btn.setAttribute('onclick', `openBookingModal('${title.replace(/'/g, "\\'")}', '${specialty.replace(/'/g, "\\'")}', '${price.replace(/'/g, "\\'")}', '${sectionName.replace(/'/g, "\\'")}')`);
+                }
+            });
+        });
+    });
+    </script>
+</body>
+</html> 
